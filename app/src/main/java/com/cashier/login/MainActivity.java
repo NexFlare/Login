@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(dbHelper.checkUser(userName.getText().toString(),password.getText().toString())){
                     Toast.makeText(MainActivity.this, "User Logged in", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this,LoggedInActivity.class));
+                    finish();
                 }
                 else{
                     Toast.makeText(MainActivity.this, "Enter correct username or password", Toast.LENGTH_SHORT).show();
